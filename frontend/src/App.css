@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f7fb;
+  font-family: "Segoe UI", sans-serif;
+  color: #1f2937;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App {
+  min-height: 100vh;
+  background: #f4f7fb;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dashboard {
+  width: 95%;
+  max-width: 1500px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+.dashboard h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1e3a8a;
+  font-size: 2.2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card-icon {
+  font-size: 2.8rem;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.card h2 {
+  font-size: 2rem;
+  color: #111827;
+}
+
+.card p {
+  margin-top: 10px;
+  color: #6b7280;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.chart-card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+.pie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.chart-card canvas {
+  max-height: 380px;
+}
+
+.table {
+  background: white;
+}
+
+.form-control {
+  transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard h1 {
+    font-size: 1.7rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 10px;
+}
+
+/* ==========================
+   DARK MODE
+========================== */
+
+.dark-mode {
+  background: #121212;
+  color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.dark-mode .container {
+  background: transparent;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode span,
+.dark-mode label,
+.dark-mode td,
+.dark-mode th {
+  color: #f8f9fa !important;
+}
+
+.dark-mode .card,
+.dark-mode .chart-card,
+.dark-mode .table,
+.dark-mode .table-responsive {
+  background: #1e1e1e;
+  color: #f8f9fa;
+}
+
+.dark-mode .table-striped > tbody > tr:nth-of-type(odd) {
+  background: #2b2b2b;
+}
+
+.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
+  background: #1e1e1e;
+}
+
+.dark-mode .table td,
+.dark-mode .table th {
+  color: #f8f9fa;
+}
+
+.dark-mode .table-dark {
+  background: #000 !important;
+}
+
+.dark-mode .form-control,
+.dark-mode input,
+.dark-mode select {
+  background: #2b2b2b;
+  color: white;
+  border: 1px solid #555;
+}
+
+.dark-mode .form-control::placeholder {
+  color: #cccccc;
+}
+
+.dark-mode .form-control:focus {
+  background: #2b2b2b;
+  color: white;
+  border-color: #0d6efd;
+  box-shadow: none;
+}
+
+.dark-mode .btn-outline-primary {
+  color: white;
+  border-color: white;
+}
+
+.dark-mode .text-muted {
+  color: #bbbbbb !important;
+}
+
+.dark-mode a {
+  color: #66b2ff;
+}
+
+.dark-mode footer {
+  background: #1a1a1a;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
