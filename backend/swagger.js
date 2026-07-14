@@ -11,7 +11,7 @@ const options = {
       title: "DBW Accident Analytics API",
       version: "1.0.0",
       description:
-        "REST API for German Road Accident Analytics, Traffic Statistics and Official Municipality (AGS/ARS) Data"
+        "REST API for Germany Road Accident Analytics, Traffic Statistics and Official Municipality (AGS/ARS) Data"
     },
 
     servers: [

@@ -18,7 +18,7 @@ function RegionExplorer({ darkMode }) {
 
   return (
     <div className="container mt-5" id="regions">
-      <h2 className="mb-4">German Region Explorer (ARS/AGS)</h2>
+      <h2 className="mb-4">Germany Region Explorer (ARS/AGS)</h2>
 
       <input
         className="form-control mb-4"

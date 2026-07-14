@@ -1,241 +1,155 @@
-# German Accident Analytics Platform
+# Germany Road Accident Analytics Platform
 
 ## Overview
 
-This project was developed as part of the Database and Web Techniques (DBW) course at TU Chemnitz.
+This project was developed as part of the **Database and Web Technologies (DBW)** course at **Technische Universität Chemnitz**.
 
-The goal of the project is to build a complete data integration platform based on official German open data sources. The system extracts, transforms, and loads accident data into a database and provides a REST API together with a web-based analytics dashboard.
-
-The platform integrates German road accident data from 2016 to 2024 and allows users to explore accident statistics, yearly trends, monthly distributions, and state-level rankings.
+The platform integrates official German road accident data (2016–2024), stores it in MongoDB, exposes the data through a RESTful API, and provides an interactive React dashboard for analyzing accident statistics and trends.
 
 ---
 
 ## Technology Stack
 
 ### Backend
-
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
 
 ### Frontend
-
-* React.js
+- React.js
+- Recharts
+- Axios
+- Bootstrap
+- CSS
 
 ### Documentation
-
-* Swagger / OpenAPI
+- Swagger / OpenAPI
 
 ---
 
-## Data Sources
+## Data Source
 
-### 1. Unfallatlas (German Accident Atlas)
+### German Accident Atlas (Unfallatlas)
 
 Source:
-https://www.opengeodata.nrw.de/produkte/transportverkehr/unfallatlas/
+https://www.opengeodata.nrw.de/produkte/transport_verkehr/unfallatlas/
 
 Datasets used:
+- Unfallorte_2016_LinRef
+- Unfallorte2017_LinRef
+- Unfallorte2018_LinRef
+- Unfallorte2019_LinRef
+- Unfallorte2020_LinRef
+- Unfallorte_2021_LinRef
+- Unfallorte2022_LinRef
+- Unfallorte2023_LinRef
+- Unfallorte2024_LinRef
 
-* Unfallorte_2016_LinRef
-* Unfallorte2017_LinRef
-* Unfallorte2018_LinRef
-* Unfallorte2019_LinRef
-* Unfallorte2020_LinRef
-* Unfallorte_2021_LinRef
-* Unfallorte2022_LinRef
-* Unfallorte2023_LinRef
-* Unfallorte2024_LinRef
-
-Total imported records:
-Approximately 2.1 million accident records.
+Approximately **2.1 million** accident records were imported into MongoDB.
 
 ---
 
 ## Project Architecture
 
-Frontend (React Dashboard)
-↓
+```
+React Dashboard
+        │
+        ▼
 REST API (Express.js)
-↓
+        │
+        ▼
 MongoDB Database
-↓
+        │
+        ▼
 ETL Import Pipeline
-↓
-Official Open Data Sources
-
----
-
-## ETL Process
-
-### Extract
-
-Accident datasets were downloaded from the official German Accident Atlas.
-
-### Transform
-
-The import script:
-
-* Reads CSV/TXT files
-* Parses semicolon-separated records
-* Harmonizes the data structure
-* Converts raw files into database records
-
-### Load
-
-The transformed data is imported into MongoDB.
-
-Collection:
-
-accidents
-
-Database:
-
-dbw
-
----
-
-## Database Design
-
-Database:
-dbw
-
-Collection:
-accidents
-
-The collection stores accident records from all years (2016–2024).
-
-Example fields:
-
-* UJAHR (Year)
-* UMONAT (Month)
-* ULAND (State)
-* Accident location information
-* Additional accident attributes
-
-The schema is flexible and uses MongoDB's document model.
-
----
-
-## REST API Endpoints
-
-### Accident Data
-
-GET /api/v1/accidents
-
-Returns accident records with optional filtering.
-
-Parameters:
-
-* year
-* state
-* month
-
----
-
-### Statistics
-
-#### Total Accident Count
-
-GET /api/v1/stats/count
-
-Optional parameters:
-
-* year
-* state
-
----
-
-#### Monthly Statistics
-
-GET /api/v1/stats/monthly
-
-Optional parameters:
-
-* year
-
----
-
-#### Top States
-
-GET /api/v1/stats/top-states
-
-Optional parameters:
-
-* year
-
----
-
-#### Yearly Statistics
-
-GET /api/v1/stats/yearly
-
-Returns accident counts grouped by year.
-
----
-
-## Swagger Documentation
-
-API documentation is available at:
-
-http://localhost:5000/api-docs
+        │
+        ▼
+Official German Open Data
+```
 
 ---
 
 ## Dashboard Features
 
-The React dashboard provides:
+- Dashboard summary cards
+- Year filter (2016–2024)
+- Monthly accident trend
+- Yearly accident trend
+- Top Federal States by accident count
+- Accident severity analysis
+- Vehicle type analysis
+- Lighting condition analysis
+- Road surface condition analysis
+- Accident rate per 100,000 inhabitants
+- Interactive charts
+- Responsive design
+- Dark mode support
 
-* Total accident count
-* Year filter (2016–2024)
-* Accident trends by year
-* Monthly accident statistics
-* Top states by accident count
-* Real-time API integration
+---
+
+## REST API
+
+The backend provides RESTful API endpoints for:
+
+- Accident records
+- Dashboard summary
+- Monthly statistics
+- Yearly statistics
+- Top Federal States
+- Earliest accident year
+- Personal injury accidents
+- Pedestrian accidents
+- Accident rate per 100,000 inhabitants
+- Accident traffic summary
+- Metadata
 
 ---
 
 ## Installation
 
-### Clone Repository
-
-git clone <repository-url>
-
 ### Backend
 
+```bash
 cd backend
-
 npm install
+npm start
+```
 
+or
+
+```bash
 node server.js
+```
+
+(depending on your project configuration)
 
 ### Frontend
 
+```bash
 cd frontend
-
 npm install
-
 npm start
+```
 
 ---
 
-## Screenshots
+## API Documentation
 
-Recommended screenshots for submission:
+Swagger UI is available at:
 
-1. Dashboard Overview
-2. Year Filter Example
-3. MongoDB Compass (2.1M+ records)
-4. Swagger Documentation
-5. API Responses
+```
+http://localhost:5000/apidocs
+```
+
+(Replace the URL if your Swagger endpoint is different.)
 
 ---
 
 ## Author
 
-Abir Majumder
+**Abir Majumder**
 
-TU Chemnitz
+M.Sc. Computer Science
 
-Database and Web Techniques (DBW)
+Technische Universität Chemnitz

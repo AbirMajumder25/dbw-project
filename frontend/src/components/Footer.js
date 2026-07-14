@@ -9,7 +9,7 @@ function Footer() {
         <div className="col-md-6">
 
           <h3>
-            🇩🇪 German Accident Analytics Dashboard
+            🇩🇪 Germany Accident Analytics Dashboard
           </h3>
 
           <p>

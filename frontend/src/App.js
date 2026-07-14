@@ -64,11 +64,11 @@ function App() {
         <section id="dashboard">
 
           <h1 className="text-center mb-2">
-            🇩🇪 German Road Traffic Accident Dashboard
+            🇩🇪 Germany Road Traffic Accident Dashboard
           </h1>
 
           <p className="text-center text-muted mb-5">
-            Interactive analytics dashboard using German accident data (2016–2024)
+            Interactive analytics dashboard using Germany accident data (2016–2024)
           </p>
 
           <DashboardCards count={count} />
